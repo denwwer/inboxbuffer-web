@@ -1,6 +1,7 @@
 // Required functions
 @import "../../node_modules/bootstrap/scss/functions";
 
+
 // Default variable overrides
 $font-family-sans-serif: nil;
 $font-family-monospace: nil;
@@ -8,13 +9,9 @@ $font-family-base: "Roboto Mono", monospace;
 $font-family-code: nil;
 
 
-$body-bg:  #F5F5F5;// #FEFAF6; //#FDF7F4;
+$body-bg:  #fbf9fa;
 $body-color: #0a0a0a;
 $brand-color: #229799;
-
-// Alert
-$alert-padding-x: 0.5rem;
-$alert-padding-y: 0.5rem;
 
 
 // Switcher
@@ -25,6 +22,7 @@ $form-check-input-width: 1.5em; // height
 $form-switch-color: #212529;
 $form-switch-focus-color: #212529;
 $form-switch-checked-color: $body-bg;
+
 
 // Required stylesheets
 @import "../../node_modules/bootstrap/scss/variables";
@@ -48,7 +46,6 @@ $form-switch-checked-color: $body-bg;
 @import "../../node_modules/bootstrap/scss/forms/form-check";
 @import "../../node_modules/bootstrap/scss/utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
-@import "../../node_modules/bootstrap/scss/alert";
 
 
 .p-name {
@@ -72,8 +69,12 @@ $form-switch-checked-color: $body-bg;
   }
 }
 
-.alert {
+.info-box {
+  color: white;
+  background-color: $brand-color;
+  padding: 0.5rem;
   font-size: 0.8rem;
+  border-radius: 3px;
 }
 
 #copy-r {
