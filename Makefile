@@ -3,4 +3,4 @@
 build:
 	@rm -rf ".parcel-cache"
 	npm run build
-	@cp -r dist/* static/
+	@cp -r dist/* docs/
