@@ -1,0 +1,82 @@
+// Required functions
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+$font-family-sans-serif: nil;
+$font-family-monospace: nil;
+$font-family-base: "Roboto Mono", monospace;
+$font-family-code: nil;
+
+
+$body-bg:  #F5F5F5;// #FEFAF6; //#FDF7F4;
+$body-color: #0a0a0a;
+$brand-color: #229799;
+
+// Alert
+$alert-padding-x: 0.5rem;
+$alert-padding-y: 0.5rem;
+
+
+// Switcher
+$form-check-input-focus-border: unset;
+$form-check-input-focus-box-shadow: none;
+$form-switch-width: 3em;
+$form-check-input-width: 1.5em; // height
+$form-switch-color: #212529;
+$form-switch-focus-color: #212529;
+$form-switch-checked-color: $body-bg;
+
+// Required stylesheets
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+
+// Required maps
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+
+// Components
+@import "../../node_modules/bootstrap/scss/helpers/position";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/forms/form-check";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "../../node_modules/bootstrap/scss/alert";
+
+
+.p-name {
+  color: $brand-color;
+  font-weight: 600;
+  //font-size: 1.2rem;
+}
+
+#theme-switch {
+  cursor: pointer;
+  border: var(--#{$prefix}border-width) solid $gray-900;
+
+    //&:focus {
+    //  box-shadow: none;
+    //}
+
+  &:checked {
+    border: var(--#{$prefix}border-width) solid $body-bg;
+    background-color: $gray-900;
+    //border-color: yellow;
+  }
+}
+
+.alert {
+  font-size: 0.8rem;
+}
+
+#copy-r {
+  position: relative;
+  top: -0.1rem;
+}
