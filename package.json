@@ -11,8 +11,6 @@
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
-    "@parcel/compressor-brotli": "^2.13.2",
-    "@parcel/compressor-gzip": "^2.13.2",
     "@parcel/packager-raw-url": "^2.13.2",
     "@parcel/transformer-sass": "^2.13.2",
     "@parcel/transformer-webmanifest": "^2.13.2",
