@@ -5,23 +5,13 @@
 // Default variable overrides
 $font-family-sans-serif: nil;
 $font-family-monospace: nil;
-$font-family-base: "Roboto Mono", monospace;
+$font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-code: nil;
 
 
 $body-bg:  #fbf9fa;
 $body-color: #0a0a0a;
 $brand-color: #229799;
-
-
-// Switcher
-$form-check-input-focus-border: unset;
-$form-check-input-focus-box-shadow: none;
-$form-switch-width: 3em;
-$form-check-input-width: 1.5em; // height
-$form-switch-color: #212529;
-$form-switch-focus-color: #212529;
-$form-switch-checked-color: $body-bg;
 
 
 // Required stylesheets
@@ -43,30 +33,200 @@ $form-switch-checked-color: $body-bg;
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/forms/form-check";
 @import "../../node_modules/bootstrap/scss/utilities";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 
-.p-name {
-  color: $brand-color;
-  font-weight: 600;
-  //font-size: 1.2rem;
+body {
+  line-height: 1.6;
 }
 
-#theme-switch {
-  cursor: pointer;
-  border: var(--#{$prefix}border-width) solid $gray-900;
+.p-name {
+  font-family: 'JetBrains Mono', monospace;
+  color: $brand-color;
+  font-weight: 600;
+}
 
-    //&:focus {
-    //  box-shadow: none;
-    //}
+.hero-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
 
-  &:checked {
-    border: var(--#{$prefix}border-width) solid $body-bg;
-    background-color: $gray-900;
-    //border-color: yellow;
+// section headers styled as code comments
+.section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: "// ";
+    color: $brand-color;
+    font-weight: 700;
   }
+}
+
+.section-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 1.25rem;
+}
+
+// quick start terminal
+.terminal {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1d2938;
+  border: 1px solid #2a3138;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+  .terminal-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    padding: 0.55rem 0.8rem 0;
+    background: #1c2228;
+
+    .dot {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      display: inline-block;
+      margin-bottom: 0.55rem;
+    }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .term-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-left: 0.5rem;
+
+      .term-tab {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.72rem;
+        line-height: 1;
+        padding: 0.45rem 0.7rem;
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        background: transparent;
+        color: #d1d5db;
+        cursor: pointer;
+        transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+
+        &:hover { color: #e6edf3; }
+
+        // active tab merges into the terminal body below it
+        &.active {
+          color: #e6edf3;
+          background: #1d2938;
+          border-color: #2a3138;
+        }
+      }
+    }
+  }
+
+  .terminal-body {
+    margin: 0;
+    padding: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: #e6edf3;
+    overflow-x: auto;
+
+    .t-prompt { color: $brand-color; font-weight: 700; }
+    .t-comment { color: #7d8590; }
+  }
+
+  .copy-src {
+    display: inline;
+    cursor: pointer;
+  }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem;
+    border: none;
+    background: transparent;
+    color: #7d8590;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: color 0.15s ease;
+
+    &:hover { color: #e6edf3; }
+    &.copied { color: $brand-color; }
+  }
+}
+
+.code-line {
+  border-radius: 4px;
+  color: #e6edf3;
+  background: #1d2938;
+  padding: 0.2rem 0.6rem;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.badge-tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $brand-color;
+  border: 1px solid $brand-color;
+  border-radius: 4px;
+}
+
+// feature grid
+.feature-card {
+  cursor: default;
+  height: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--#{$prefix}border-color);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    border-color: $brand-color;
+    transform: translateY(-2px);
+  }
+
+  p {
+    margin: 0.35rem 0 0;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+}
+
+// design decisions
+.decision {
+  padding-left: 1rem;
+  border-left: 2px solid $brand-color;
+  margin-bottom: 1.5rem;
+
+  p {
+    margin: 0.35rem 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+}
+
+a {
+  text-underline-offset: 0.2rem;
 }
 
 .info-box {
@@ -75,9 +235,4 @@ $form-switch-checked-color: $body-bg;
   padding: 0.5rem;
   font-size: 0.8rem;
   border-radius: 3px;
-}
-
-#copy-r {
-  position: relative;
-  top: -0.1rem;
 }
